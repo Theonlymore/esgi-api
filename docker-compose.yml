@@ -7,4 +7,4 @@ services:
       - .:/app
     ports:
       - "4321:5000"
-    command: python main.py
+    command: sh -c "flask db init && flask run --host=0.0.0.0"
