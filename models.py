@@ -4,10 +4,13 @@ from app import db
 class Match(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.Date, nullable=False)
-    equipe_locale = db.Column(db.String(100), nullable=False)
-    equipe_visiteur = db.Column(db.String(100), nullable=False)
+    equipe_locale_id = db.Column(db.Integer, db.ForeignKey('equipe.id'), nullable=False)
+    equipe_visiteur_id = db.Column(db.Integer, db.ForeignKey('equipe.id'), nullable=False)
     score_locale = db.Column(db.Integer)
     score_visiteur = db.Column(db.Integer)
+
+    equipe_locale = db.relationship('Equipe', foreign_keys=[equipe_locale_id])
+    equipe_visiteur = db.relationship('Equipe', foreign_keys=[equipe_visiteur_id])
 
     def serialize(self):
         return {
@@ -34,7 +37,12 @@ class Coach(db.Model):
 class Equipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nom = db.Column(db.String(100), nullable=False)
-    sport = db.Column(db.String(100), nullable=False)
+    
+    def serialize(self):
+        return {
+            'id': self.id,
+            'nom': self.nom
+        }
 
 class Statistique(db.Model):
     id = db.Column(db.Integer, primary_key=True)
