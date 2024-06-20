@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rf esgi-api
 
 git clone https://github.com/Theonlymore/esgi-api.git
 
