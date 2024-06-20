@@ -9,8 +9,6 @@ URL: POST http://rocheralexandre.com:4321/api/equipes
 ## Requête:
 
 ```json
-json
-Copy code
 {
     "id": X,
     "nom": X
