@@ -13,6 +13,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copie le reste des fichiers de l'application dans le conteneur
 COPY . .
 
-# Définit la commande par défaut à exécuter
-CMD ["python", "main.py"] 
 
