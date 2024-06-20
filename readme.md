@@ -8,6 +8,14 @@
 
 - `docker-compose -f docker-compose.yml up --build`
 
+## Lancement app:
 
+- `pip install -r requirements.txt`
+ 
+- `flask db init`
+
+- `flask run`
+
+Then you can use postman to make your request
 
 
