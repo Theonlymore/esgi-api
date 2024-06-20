@@ -26,5 +26,5 @@ jobs:
         ssh-keyscan -H rocheralexandre.com >> ~/.ssh/known_hosts
 
     - name: Run script on server
-      run: ssh root@rocheralexandre.com 'bash -s' < /esgi/script.sh
+      run: ssh root@rocheralexandre.com 'bash -s' < .github/deploy/script.sh
 
